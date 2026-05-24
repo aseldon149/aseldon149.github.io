@@ -73,8 +73,10 @@ section {
 }
 
 section h2 {
-    color: #1e3a8a;
+    color: white;
     margin-top: 0;
+    padding: 15px;
+    background-color: #1e3a8a;
 }
 
 section p {
