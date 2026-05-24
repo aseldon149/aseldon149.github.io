@@ -1,6 +1,4 @@
-/* =========================
-   General Page Styling
-========================= */
+/* General Page Styling */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -10,9 +8,8 @@ body {
     color: #333;
 }
 
-/* =========================
-   Header Styling
-========================= */
+
+/* Header Section */
 
 header {
     background-color: #1e3a8a;
@@ -27,9 +24,8 @@ header h1 {
     margin: 0;
 }
 
-/* =========================
-   Navigation Menu
-========================= */
+
+/* Navigation Menu */
 
 nav ul {
     list-style-type: none;
@@ -50,14 +46,14 @@ nav ul li a {
 }
 
 /* Hover Effect */
+
 nav ul li a:hover {
     background-color: #60a5fa;
     color: black;
 }
 
-/* =========================
-   Main Content Sections
-========================= */
+
+/* Main Content Sections */
 
 main {
     padding: 20px;
@@ -75,8 +71,11 @@ section {
 section h2 {
     color: white;
     margin-top: 0;
+    margin-bottom: 15px;
     padding: 15px;
     background-color: #1e3a8a;
+    border-radius: 5px;
+    text-align: center;
 }
 
 section p {
@@ -84,9 +83,8 @@ section p {
     font-size: 1rem;
 }
 
-/* =========================
-   Footer Styling
-========================= */
+
+/* Footer Section */
 
 footer {
     background-color: #111827;
@@ -95,17 +93,4 @@ footer {
     padding: 15px;
     font-size: 0.8rem;
     margin-top: 30px;
-}
-
-/* Section Header Fix */
-section header {
-    background-color: transparent;
-    padding: 0;
-}
-
-section h2 {
-    color: white;
-    background-color: #1e3a8a;
-    padding: 15px;
-    border-radius: 5px;
 }
