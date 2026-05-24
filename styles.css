@@ -96,3 +96,16 @@ footer {
     font-size: 0.8rem;
     margin-top: 30px;
 }
+
+/* Section Header Fix */
+section header {
+    background-color: transparent;
+    padding: 0;
+}
+
+section h2 {
+    color: white;
+    background-color: #1e3a8a;
+    padding: 15px;
+    border-radius: 5px;
+}
