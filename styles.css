@@ -14,18 +14,37 @@ header {
     background-color: #1e3a8a;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 /* Navigation Menu */
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 0;
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #2563eb;
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #60a5fa;
+    color: black;
 }
 
 /* Main Content */
@@ -34,24 +53,90 @@ main {
     padding: 20px;
 }
 
-/* Section Styling */
+/* Content Sections */
 
 section {
     background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
     max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Smooth zoom effect */
     transition: transform 0.3s ease;
 }
 
-/* Table Styling */
+section:hover {
+    transform: scale(1.02);
+}
+
+section h2 {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 0;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+/* Projects Table */
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+}
+
+caption {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+/* First and Third Columns */
+
+.project-name {
+    background-color: #dbeafe;
+}
+
+.project-image {
+    background-color: #f0f9ff;
+}
+
+/* Footer Row */
+
+tfoot td {
+    text-align: center;
+    font-style: italic;
+    background-color: #e5e7eb;
+}
+
+/* Image Styling */
+
+table img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
 }
 
 /* Footer */
@@ -60,6 +145,6 @@ footer {
     background-color: #111827;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     margin-top: 30px;
 }
