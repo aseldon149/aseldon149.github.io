@@ -25,7 +25,7 @@ header h1 {
 /* Navigation Menu */
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -62,8 +62,6 @@ section {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    /* Smooth zoom effect */
     transition: transform 0.3s ease;
 }
 
@@ -96,6 +94,7 @@ caption {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 th,
@@ -111,32 +110,18 @@ th {
     color: white;
 }
 
-/* First and Third Columns */
-
-.project-name {
+col.project-name {
     background-color: #dbeafe;
 }
 
-.project-image {
+col.project-image {
     background-color: #f0f9ff;
 }
-
-/* Footer Row */
 
 tfoot td {
     text-align: center;
     font-style: italic;
     background-color: #e5e7eb;
-}
-
-/* Image Styling */
-
-table img {
-    width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
 }
 
 /* Footer */
