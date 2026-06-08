@@ -133,3 +133,81 @@ footer {
     padding: 20px;
     margin-top: 30px;
 }
+/* Main Content Flexbox */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Contact Form Flexbox */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Form Fields */
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effects */
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* Submit Button */
+
+input[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #60a5fa;
+}
+
+/* Phone Layout */
+
+body {
+    min-width: 320px;
+}
+
+/* Tablet Layout */
+
+@media screen and (min-width: 768px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    section {
+        flex: 1 1 45%;
+    }
+}
+
+/* Desktop Layout */
+
+@media screen and (min-width: 1024px) {
+    main {
+        flex-direction: row;
+    }
+
+    section {
+        flex: 1 1 30%;
+    }
+}
