@@ -47,7 +47,7 @@ This website is hosted using GitHub Pages.
 
 To view the live site, visit:
 
-[]
+[https://aseldon149.github.io/]
 
 Future Improvements
 Add project screenshots and images
