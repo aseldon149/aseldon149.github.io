@@ -38,7 +38,7 @@ To run this project locally:
 
 Clone the repository:
 
-git clone https://github.com/yourusername/yourrepository.git
+git clone [https://github.com/aseldon149/aseldon149.github.io.git]
 Open the project folder.
 Open the index.html file in a web browser.
 Deployment
