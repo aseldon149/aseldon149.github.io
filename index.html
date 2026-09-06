@@ -1,14 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Personal portfolio homepage">
-    <meta name="keywords" content="HTML, portfolio, web design">
+    <meta name="keywords" content="HTML, CSS, JavaScript, portfolio, web design">
     <meta name="author" content="Anthony Seldon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio</title>
+    <title>Anthony's Portfolio</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,6 +19,9 @@
     <!-- Header Section -->
     <header>
         <h1>Welcome to My Portfolio</h1>
+
+        <!-- JavaScript will personalize this message -->
+        <p id="welcome-message">Welcome to my portfolio!</p>
 
         <!-- Navigation Menu -->
         <nav>
@@ -29,119 +33,184 @@
         </nav>
     </header>
 
+
     <!-- Main Content -->
     <main>
 
         <!-- About Section -->
         <section id="about">
+
             <h2>About Me</h2>
 
             <p>
-                Hello! My name is Anthony Seldon. I am currently learning web design and
-                developing my skills in HTML5 and CSS3. This portfolio will showcase
-                projects that I create throughout my coursework and personal learning journey.
+                Hello! My name is Anthony Seldon. I am currently learning
+                web design and developing my skills in HTML5, CSS3, and
+                JavaScript.
             </p>
+
+            <p>
+                Throughout my coursework, I have been learning how to
+                create responsive websites, work with databases and SQL,
+                and develop projects using different programming and web
+                technologies.
+            </p>
+
+            <p>
+                This portfolio showcases some of the projects I have
+                completed while continuing to develop my technical skills.
+            </p>
+
         </section>
+
 
         <!-- Projects Section -->
         <section id="projects">
+
             <h2>Projects</h2>
 
-            <table>
-                <caption>Portfolio Project Showcase</caption>
+            <p>
+                Below are examples of projects I have completed or am
+                currently developing. Click an image to view the project.
+            </p>
 
-                <colgroup>
-                    <col class="project-name">
-                    <col>
-                    <col class="project-image">
-                </colgroup>
+            <div class="projects-container">
 
-                <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Description</th>
-                        <th>Image Preview</th>
-                    </tr>
-                </thead>
+                <!-- Project 1 -->
+                <article class="project-card">
 
-                <tbody>
-                    <tr>
-                        <td>Personal Portfolio Website</td>
-                        <td>
-                            A responsive portfolio website created using HTML and CSS.
-                            It highlights personal information, projects, and contact details.
-                        </td>
-                        <td>[Portfolio Image Placeholder]</td>
-                    </tr>
+                    <a href="https://aseldon149.github.io/aseldon149/#home"
+                       target="_blank">
 
-                    <tr>
-                        <td>Course Assignment Webpage</td>
-                        <td>
-                            A course project demonstrating semantic HTML structure,
-                            CSS styling, and responsive design techniques.
-                        </td>
-                        <td>[Assignment Image Placeholder]</td>
-                    </tr>
-                </tbody>
+                        <img src="https://via.placeholder.com/400x250?text=Personal+Blog"
+                             alt="Personal Blog Website project">
 
-                <tfoot>
-                    <tr>
-                        <td colspan="3">
-                            More projects will be added as I continue developing my web design skills.
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+                    </a>
+
+                    <h3>Personal Blog Website</h3>
+
+                    <p>
+                        A personal blog website created using HTML and CSS.
+                        The project demonstrates webpage structure,
+                        navigation, responsive design, and contact forms.
+                    </p>
+
+                </article>
+
+
+                <!-- Project 2 -->
+                <article class="project-card">
+
+                    <a href="https://aseldon149.github.io/the-storefront/"
+                       target="_blank">
+
+                        <img src="https://via.placeholder.com/400x250?text=The+Storefront"
+                             alt="The Storefront project">
+
+                    </a>
+
+                    <h3>The Storefront</h3>
+
+                    <p>
+                        A storefront website project demonstrating web
+                        design, page structure, styling, and user-friendly
+                        website navigation.
+                    </p>
+
+                </article>
+
+
+                <!-- Project 3 - Placeholder allowed by assignment -->
+                <article class="project-card">
+
+                    <a href="https://github.com/aseldon149"
+                       target="_blank">
+
+                        <img src="https://via.placeholder.com/400x250?text=Future+Project"
+                             alt="Placeholder for a future project">
+
+                    </a>
+
+                    <h3>Future Project</h3>
+
+                    <p>
+                        This is a placeholder for a future project that
+                        will be added as I continue developing my skills.
+                    </p>
+
+                </article>
+
+            </div>
+
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact">
-    <h2>Contact Me</h2>
 
-    <p>
-        Feel free to contact me regarding web design projects,
-        collaboration opportunities, networking, or any questions
-        you may have. Complete the form below and I will get back
-        to you as soon as possible.
-    </p>
+            <h2>Contact Me</h2>
 
-    <form action="#" method="post">
+            <p>
+                Feel free to contact me regarding web design projects,
+                collaboration opportunities, networking, or any questions
+                you may have. Complete the form below and I will get back
+                to you as soon as possible.
+            </p>
 
-        <label for="name">Name:</label>
-        <input type="text"
-               id="name"
-               name="name"
-               required>
 
-        <label for="email">Email:</label>
-        <input type="email"
-               id="email"
-               name="email"
-               required>
+            <!-- Contact Form -->
+            <form action="#" method="post">
 
-        <label for="subject">Subject:</label>
-        <input type="text"
-               id="subject"
-               name="subject">
+                <label for="name">Name:</label>
 
-        <label for="message">Message:</label>
-        <textarea id="message"
-                  name="message"
-                  rows="5"></textarea>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       required>
 
-        <input type="submit"
-               value="Send Message">
 
-    </form>
-</section>
+                <label for="email">Email:</label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       required>
+
+
+                <label for="subject">Subject:</label>
+
+                <input type="text"
+                       id="subject"
+                       name="subject">
+
+
+                <label for="message">Message:</label>
+
+                <textarea id="message"
+                          name="message"
+                          rows="5"
+                          required></textarea>
+
+
+                <input type="submit"
+                       value="Send Message">
+
+            </form>
+
+        </section>
 
     </main>
+
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Anthony Seldon Portfolio Website</p>
     </footer>
 
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+```
