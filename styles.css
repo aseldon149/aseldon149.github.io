@@ -1,3 +1,4 @@
+```css
 /* General Page Styling */
 
 body {
@@ -6,7 +7,9 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    min-width: 320px;
 }
+
 
 /* Header Section */
 
@@ -21,6 +24,7 @@ header h1 {
     margin: 0;
     font-size: 2.5rem;
 }
+
 
 /* Navigation Menu */
 
@@ -47,26 +51,28 @@ nav ul li a:hover {
     color: black;
 }
 
+
 /* Main Content */
 
 main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 20px;
 }
+
 
 /* Content Sections */
 
 section {
     background-color: white;
     max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 25px auto;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-section:hover {
-    transform: scale(1.02);
 }
 
 section h2 {
@@ -82,72 +88,54 @@ section p {
     line-height: 1.6;
 }
 
-/* Projects Table */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+/* Projects Section */
 
-caption {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 12px;
-    text-align: center;
-}
-
-th,
-td {
-    border: 1px solid #cccccc;
-    padding: 12px;
-    text-align: left;
-    vertical-align: middle;
-}
-
-th {
-    background-color: #1e3a8a;
-    color: white;
-}
-
-col.project-name {
-    background-color: #dbeafe;
-}
-
-col.project-image {
-    background-color: #f0f9ff;
-}
-
-tfoot td {
-    text-align: center;
-    font-style: italic;
-    background-color: #e5e7eb;
-}
-
-/* Footer */
-
-footer {
-    background-color: #111827;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-/* Main Content Flexbox */
-
-main {
+.projects-container {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Contact Form Flexbox */
+
+/* Individual Project Cards */
+
+.project-card {
+    flex: 1 1 250px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Project Images */
+
+.project-card img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+
+/* Project Image Hover Effect */
+
+.project-card img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Contact Form */
 
 form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
 
 /* Form Fields */
 
@@ -157,7 +145,9 @@ textarea {
     border: 1px solid #cccccc;
     border-radius: 5px;
     transition: border-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* Focus Effects */
 
@@ -166,6 +156,7 @@ textarea:focus {
     border-color: #2563eb;
     outline: none;
 }
+
 
 /* Submit Button */
 
@@ -181,33 +172,51 @@ input[type="submit"]:hover {
     background-color: #60a5fa;
 }
 
+
+/* Footer */
+
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
 /* Phone Layout */
 
-body {
-    min-width: 320px;
+@media screen and (max-width: 767px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-container {
+        flex-direction: column;
+    }
+
 }
+
 
 /* Tablet Layout */
 
-@media screen and (min-width: 768px) {
-    main {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .projects-container {
         flex-direction: row;
-        flex-wrap: wrap;
     }
 
-    section {
-        flex: 1 1 45%;
-    }
 }
+
 
 /* Desktop Layout */
 
 @media screen and (min-width: 1024px) {
-    main {
+
+    .projects-container {
         flex-direction: row;
     }
 
-    section {
-        flex: 1 1 30%;
-    }
 }
