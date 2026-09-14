@@ -19,6 +19,12 @@
     <header>
         <h1>Welcome to My Portfolio</h1>
 
+        <!-- Dark Mode Toggle -->
+        <label class="dark-mode-toggle">
+            <input type="checkbox" id="darkMode">
+            Dark Mode
+        </label>
+
         <!-- JavaScript will personalize this message -->
         <p id="welcome-message">Welcome to my portfolio!</p>
 
@@ -26,6 +32,7 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#featured-content">Featured Content</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -58,6 +65,62 @@
                 This portfolio showcases some of the projects I have
                 completed while continuing to develop my technical skills.
             </p>
+
+            <!-- Skills List -->
+            <h3>Skills and Technologies</h3>
+
+            <ul id="skills-list">
+                <!-- JavaScript will add the skills using a loop -->
+            </ul>
+
+        </section>
+
+
+        <!-- Featured Content Section -->
+        <section id="featured-content">
+
+            <h2>Featured Content</h2>
+
+            <!-- University Resources -->
+            <div id="university-resources" class="featured-box">
+
+                <h3>University Resources</h3>
+
+                <p>
+                    Visit my ECPI University program home page to learn
+                    more about my program and field of study.
+                </p>
+
+                <a href="https://www.ecpi.edu/programs/ux-web-development-bachelor-degree"
+                   target="_blank">
+                    ECPI UX and Web Development Program
+                </a>
+
+            </div>
+
+
+            <!-- Personal Projects -->
+            <div id="personal-projects" class="featured-box">
+
+                <h3>Personal Projects</h3>
+
+                <a href="https://aseldon149.github.io/aseldon149/#home"
+                   target="_blank">
+
+                    <img src="https://via.placeholder.com/300x180?text=Personal+Blog"
+                         alt="Personal Blog Website">
+
+                </a>
+
+                <a href="https://aseldon149.github.io/the-storefront/"
+                   target="_blank">
+
+                    <img src="https://via.placeholder.com/300x180?text=The+Storefront"
+                         alt="The Storefront">
+
+                </a>
+
+            </div>
 
         </section>
 
@@ -190,7 +253,9 @@
                           required></textarea>
 
 
+                <!-- Submit Button -->
                 <input type="submit"
+                       id="submit-button"
                        value="Send Message">
 
             </form>
