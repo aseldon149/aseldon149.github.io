@@ -1,4 +1,8 @@
 
+// --------------------------------------------------
+// WELCOME MESSAGE
+// --------------------------------------------------
+
 // Prompt the visitor to enter their name.
 let userName = prompt("What is your name?");
 
@@ -67,11 +71,45 @@ for (let i = 0; i < skills.length; i++) {
 
 
 // --------------------------------------------------
+// DYNAMIC PROJECT MESSAGE
+// --------------------------------------------------
+
+// Locate the Projects section.
+let projectsSection =
+    document.getElementById("projects");
+
+// Create a new paragraph.
+let newProjectMessage =
+    document.createElement("p");
+
+// Add text to the new paragraph.
+newProjectMessage.textContent =
+    "I am continuing to develop my JavaScript skills by creating interactive web projects.";
+
+// Add the new paragraph to the Projects section.
+projectsSection.appendChild(newProjectMessage);
+
+
+// --------------------------------------------------
+// MODIFY EXISTING ELEMENT
+// --------------------------------------------------
+
+// Locate the About section.
+let aboutSection =
+    document.getElementById("about");
+
+// Change the border of the About section.
+aboutSection.style.border =
+    "2px solid #333";
+
+
+// --------------------------------------------------
 // DARK MODE
 // --------------------------------------------------
 
 // Locate the Dark Mode checkbox.
-let darkMode = document.getElementById("darkMode");
+let darkMode =
+    document.getElementById("darkMode");
 
 // Listen for changes to the Dark Mode checkbox.
 darkMode.addEventListener("change", function () {
@@ -90,23 +128,34 @@ darkMode.addEventListener("change", function () {
 // CONTACT FORM INTERACTIVITY
 // --------------------------------------------------
 
-// Locate the Submit button.
-let submitButton = document.getElementById("submit-button");
+// Locate the contact form.
+let contactForm =
+    document.getElementById("contact-form");
 
-// Add a click event listener to the Submit button.
-submitButton.addEventListener("click", function (event) {
+// Listen for the form submission.
+contactForm.addEventListener("submit", function (event) {
 
     // Prevent the form from refreshing the page.
     event.preventDefault();
 
-    // Get the name entered in the contact form.
-    let contactName = document.getElementById("name").value;
+    // Create a loading message.
+    let statusMessage =
+        document.createElement("p");
 
-    // Display a confirmation message.
-    alert(
-        "Thank you, " +
-        contactName +
-        ", your message has been sent!"
-    );
+    // Display the loading message.
+    statusMessage.textContent =
+        "Sending message...";
+
+    // Add the loading message to the form.
+    contactForm.appendChild(statusMessage);
+
+    // Wait 3 seconds before displaying the confirmation.
+    setTimeout(function () {
+
+        // Replace the loading message.
+        statusMessage.textContent =
+            "Message sent successfully!";
+
+    }, 3000);
 
 });
