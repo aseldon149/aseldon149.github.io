@@ -224,14 +224,82 @@ input[type="submit"]:hover {
 }
 
 
-/* Footer */
+/* Tooltip */
 
-footer {
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
     background-color: #111827;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 8px;
+    border-radius: 5px;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+/* Show Tooltip When Hovering */
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Welcome Modal */
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Modal Close Button */
+
+#close-modal {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-modal:hover {
+    background-color: #60a5fa;
 }
 
 
@@ -268,6 +336,22 @@ body.dark-mode .featured-box h3 {
 
 body.dark-mode .featured-box a {
     color: #93c5fd;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1f2937;
+    color: white;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
 }
 
 
