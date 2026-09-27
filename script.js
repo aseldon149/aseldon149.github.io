@@ -1,22 +1,15 @@
-
 // --------------------------------------------------
-// WELCOME MESSAGE
+// WELCOME MODAL
 // --------------------------------------------------
 
-// Prompt the visitor to enter their name.
-let userName = prompt("What is your name?");
+// Locate the welcome modal and Close button.
+let welcomeModal = document.getElementById("welcome-modal");
+let closeModal = document.getElementById("close-modal");
 
-// Locate the welcome message on the webpage.
-let welcomeMessage = document.getElementById("welcome-message");
-
-// Update the message with the visitor's name.
-if (userName) {
-    welcomeMessage.textContent =
-        "Welcome to my portfolio, " + userName + "!";
-} else {
-    welcomeMessage.textContent =
-        "Welcome to my portfolio!";
-}
+// Close the modal when the user clicks the Close button.
+closeModal.addEventListener("click", function () {
+    welcomeModal.style.display = "none";
+});
 
 
 // --------------------------------------------------
@@ -35,11 +28,15 @@ let personalProjects =
 
 // Display content based on the number of projects.
 if (projectCount < 3) {
+
     universityResources.style.display = "block";
     personalProjects.style.display = "block";
+
 } else {
+
     universityResources.style.display = "none";
     personalProjects.style.display = "block";
+
 }
 
 
@@ -67,58 +64,49 @@ for (let i = 0; i < skills.length; i++) {
     listItem.textContent = skills[i];
 
     skillsList.appendChild(listItem);
+
 }
 
 
 // --------------------------------------------------
-// DYNAMIC PROJECT MESSAGE
-// --------------------------------------------------
-
-// Locate the Projects section.
-let projectsSection =
-    document.getElementById("projects");
-
-// Create a new paragraph.
-let newProjectMessage =
-    document.createElement("p");
-
-// Add text to the new paragraph.
-newProjectMessage.textContent =
-    "I am continuing to develop my JavaScript skills by creating interactive web projects.";
-
-// Add the new paragraph to the Projects section.
-projectsSection.appendChild(newProjectMessage);
-
-
-// --------------------------------------------------
-// MODIFY EXISTING ELEMENT
-// --------------------------------------------------
-
-// Locate the About section.
-let aboutSection =
-    document.getElementById("about");
-
-// Change the border of the About section.
-aboutSection.style.border =
-    "2px solid #333";
-
-
-// --------------------------------------------------
-// DARK MODE
+// DARK MODE WITH LOCAL STORAGE
 // --------------------------------------------------
 
 // Locate the Dark Mode checkbox.
-let darkMode =
-    document.getElementById("darkMode");
+let darkMode = document.getElementById("darkMode");
+
+// Check for a saved Dark Mode preference.
+let savedDarkMode = localStorage.getItem("darkMode");
+
+// Automatically apply Dark Mode if it was previously enabled.
+if (savedDarkMode === "enabled") {
+
+    document.body.classList.add("dark-mode");
+
+    darkMode.checked = true;
+
+}
+
 
 // Listen for changes to the Dark Mode checkbox.
 darkMode.addEventListener("change", function () {
 
-    // Add or remove the dark-mode class.
     if (darkMode.checked) {
+
+        // Turn on Dark Mode.
         document.body.classList.add("dark-mode");
+
+        // Save the Dark Mode preference.
+        localStorage.setItem("darkMode", "enabled");
+
     } else {
+
+        // Turn off Dark Mode.
         document.body.classList.remove("dark-mode");
+
+        // Save the Light Mode preference.
+        localStorage.setItem("darkMode", "disabled");
+
     }
 
 });
@@ -128,34 +116,23 @@ darkMode.addEventListener("change", function () {
 // CONTACT FORM INTERACTIVITY
 // --------------------------------------------------
 
-// Locate the contact form.
-let contactForm =
-    document.getElementById("contact-form");
+// Locate the Submit button.
+let submitButton = document.getElementById("submit-button");
 
-// Listen for the form submission.
-contactForm.addEventListener("submit", function (event) {
+// Add a click event listener to the Submit button.
+submitButton.addEventListener("click", function (event) {
 
     // Prevent the form from refreshing the page.
     event.preventDefault();
 
-    // Create a loading message.
-    let statusMessage =
-        document.createElement("p");
+    // Get the name entered in the contact form.
+    let contactName = document.getElementById("name").value;
 
-    // Display the loading message.
-    statusMessage.textContent =
-        "Sending message...";
-
-    // Add the loading message to the form.
-    contactForm.appendChild(statusMessage);
-
-    // Wait 3 seconds before displaying the confirmation.
-    setTimeout(function () {
-
-        // Replace the loading message.
-        statusMessage.textContent =
-            "Message sent successfully!";
-
-    }, 3000);
+    // Display a confirmation message.
+    alert(
+        "Thank you, " +
+        contactName +
+        ", your message has been sent!"
+    );
 
 });
