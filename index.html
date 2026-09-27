@@ -15,8 +15,27 @@
 
 <body>
 
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="modal">
+
+        <div class="modal-content">
+
+            <h2>Welcome to My Portfolio</h2>
+
+            <p>
+                This page is a work in progress.
+            </p>
+
+            <button id="close-modal">Close</button>
+
+        </div>
+
+    </div>
+
+
     <!-- Header Section -->
     <header>
+
         <h1>Welcome to My Portfolio</h1>
 
         <!-- Dark Mode Toggle -->
@@ -25,23 +44,38 @@
             Dark Mode
         </label>
 
-        <!-- JavaScript will personalize this message -->
-        <p id="welcome-message">Welcome to my portfolio!</p>
 
         <!-- Navigation Menu -->
         <nav>
+
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#featured-content">Featured Content</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#featured-content">Featured Content</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
 
     <!-- Main Content -->
     <main>
+
 
         <!-- About Section -->
         <section id="about">
@@ -66,6 +100,7 @@
                 completed while continuing to develop my technical skills.
             </p>
 
+
             <!-- Skills List -->
             <h3>Skills and Technologies</h3>
 
@@ -81,14 +116,15 @@
 
             <h2>Featured Content</h2>
 
+
             <!-- University Resources -->
             <div id="university-resources" class="featured-box">
 
                 <h3>University Resources</h3>
 
                 <p>
-                    Visit my ECPI University program home page to learn
-                    more about my program and field of study.
+                    Visit my ECPI University program page for information
+                    about my field of study.
                 </p>
 
                 <a href="https://www.ecpi.edu/programs/ux-web-development-bachelor-degree"
@@ -111,6 +147,7 @@
                          alt="Personal Blog Website">
 
                 </a>
+
 
                 <a href="https://aseldon149.github.io/the-storefront/"
                    target="_blank">
@@ -135,7 +172,9 @@
                 currently developing. Click an image to view the project.
             </p>
 
+
             <div class="projects-container">
+
 
                 <!-- Project 1 -->
                 <article class="project-card">
@@ -181,7 +220,7 @@
                 </article>
 
 
-                <!-- Project 3 -->
+                <!-- Project 3 - Placeholder -->
                 <article class="project-card">
 
                     <a href="https://github.com/aseldon149"
@@ -220,9 +259,12 @@
 
 
             <!-- Contact Form -->
-            <form id="contact-form" action="#" method="post">
+            <form action="#" method="post">
 
-                <label for="name">Name:</label>
+
+                <label for="name">
+                    Name:
+                </label>
 
                 <input type="text"
                        id="name"
@@ -230,7 +272,9 @@
                        required>
 
 
-                <label for="email">Email:</label>
+                <label for="email">
+                    Email:
+                </label>
 
                 <input type="email"
                        id="email"
@@ -238,14 +282,18 @@
                        required>
 
 
-                <label for="subject">Subject:</label>
+                <label for="subject">
+                    Subject:
+                </label>
 
                 <input type="text"
                        id="subject"
                        name="subject">
 
 
-                <label for="message">Message:</label>
+                <label for="message">
+                    Message:
+                </label>
 
                 <textarea id="message"
                           name="message"
@@ -253,10 +301,18 @@
                           required></textarea>
 
 
-                <!-- Submit Button -->
-                <input type="submit"
-                       id="submit-button"
-                       value="Send Message">
+                <!-- Submit Button with Tooltip -->
+                <div class="tooltip">
+
+                    <input type="submit"
+                           id="submit-button"
+                           value="Send Message">
+
+                    <span class="tooltip-text">
+                        Click to send your message!
+                    </span>
+
+                </div>
 
             </form>
 
@@ -267,11 +323,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Anthony Seldon Portfolio Website</p>
+
+        <p>
+            &copy; 2026 Anthony Seldon Portfolio Website
+        </p>
+
     </footer>
 
 
-    <!-- JavaScript file -->
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 
 </body>
