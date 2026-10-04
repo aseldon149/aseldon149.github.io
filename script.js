@@ -43,7 +43,7 @@ let project3 = {
 };
 
 
-// Create an array containing all three project objects.
+// Place the project objects into an array.
 let projects = [
     project1,
     project2,
@@ -55,24 +55,25 @@ let projects = [
 // SESSION STORAGE
 // --------------------------------------------------
 
-// Check if project information already exists in sessionStorage.
+// Check whether project information already exists
+// in sessionStorage.
 let storedProjects = sessionStorage.getItem("projects");
 
 
-// If no project information exists, store the project array.
+// If project information does not exist,
+// convert the array to JSON and store it.
 if (storedProjects === null) {
 
-    // Convert the project array to a JSON string.
-    let projectData = JSON.stringify(projects);
-
-    // Store the JSON string in sessionStorage.
-    sessionStorage.setItem("projects", projectData);
+    sessionStorage.setItem(
+        "projects",
+        JSON.stringify(projects)
+    );
 
 } else {
 
-    // Retrieve and convert the stored JSON back into JavaScript objects.
+    // Retrieve the stored project information
+    // and convert it back into JavaScript objects.
     projects = JSON.parse(storedProjects);
-
 }
 
 
@@ -80,59 +81,72 @@ if (storedProjects === null) {
 // DYNAMIC PROJECT DISPLAY
 // --------------------------------------------------
 
-// Select the Projects container from the HTML.
+// Locate the Projects container.
 let projectsContainer =
     document.getElementById("projects-container");
 
 
-// Loop through the project array.
+// Loop through every project in the array.
 for (let i = 0; i < projects.length; i++) {
 
-    // Create the project article.
-    let projectCard = document.createElement("article");
+    // Create a project article.
+    let projectCard =
+        document.createElement("article");
 
     projectCard.classList.add("project-card");
 
 
     // Create the project link.
-    let projectLink = document.createElement("a");
+    let projectLink =
+        document.createElement("a");
 
-    projectLink.href = projects[i].repositoryURL;
+    projectLink.href =
+        projects[i].repositoryURL;
+
     projectLink.target = "_blank";
 
 
     // Create the project image.
-    let projectImage = document.createElement("img");
+    let projectImage =
+        document.createElement("img");
 
-    projectImage.src = projects[i].imageURL;
-    projectImage.alt = projects[i].title + " project";
+    projectImage.src =
+        projects[i].imageURL;
+
+    projectImage.alt =
+        projects[i].title + " project";
 
 
-    // Add the image to the project link.
+    // Add the image to the link.
     projectLink.appendChild(projectImage);
 
 
     // Create the project title.
-    let projectTitle = document.createElement("h3");
+    let projectTitle =
+        document.createElement("h3");
 
-    projectTitle.textContent = projects[i].title;
+    projectTitle.textContent =
+        projects[i].title;
 
 
     // Create the project summary.
-    let projectSummary = document.createElement("p");
+    let projectSummary =
+        document.createElement("p");
 
-    projectSummary.textContent = projects[i].summary;
+    projectSummary.textContent =
+        projects[i].summary;
 
 
-    // Add the project elements to the project card.
+    // Add the elements to the project card.
     projectCard.appendChild(projectLink);
+
     projectCard.appendChild(projectTitle);
+
     projectCard.appendChild(projectSummary);
 
 
     // Add the project card to the Projects section.
     projectsContainer.appendChild(projectCard);
-
 }
 
 
@@ -153,17 +167,18 @@ let personalProjects =
     document.getElementById("personal-projects");
 
 
-// Display content based on the number of projects.
+// Display Featured Content based on project count.
 if (projectCount < 3) {
 
     universityResources.style.display = "block";
+
     personalProjects.style.display = "block";
 
 } else {
 
     universityResources.style.display = "none";
-    personalProjects.style.display = "block";
 
+    personalProjects.style.display = "block";
 }
 
 
@@ -181,7 +196,7 @@ let skills = [
 ];
 
 
-// Locate the skills list in the About section.
+// Locate the skills list.
 let skillsList =
     document.getElementById("skills-list");
 
@@ -189,12 +204,13 @@ let skillsList =
 // Use a for loop to display each skill.
 for (let i = 0; i < skills.length; i++) {
 
-    let listItem = document.createElement("li");
+    let listItem =
+        document.createElement("li");
 
-    listItem.textContent = skills[i];
+    listItem.textContent =
+        skills[i];
 
     skillsList.appendChild(listItem);
-
 }
 
 
@@ -212,13 +228,12 @@ let savedDarkMode =
     localStorage.getItem("darkMode");
 
 
-// Automatically apply Dark Mode if it was previously enabled.
+// Apply Dark Mode if it was previously enabled.
 if (savedDarkMode === "enabled") {
 
     document.body.classList.add("dark-mode");
 
     darkMode.checked = true;
-
 }
 
 
@@ -230,17 +245,22 @@ darkMode.addEventListener("change", function () {
         // Turn on Dark Mode.
         document.body.classList.add("dark-mode");
 
-        // Save the Dark Mode preference.
-        localStorage.setItem("darkMode", "enabled");
+        // Save the preference.
+        localStorage.setItem(
+            "darkMode",
+            "enabled"
+        );
 
     } else {
 
         // Turn off Dark Mode.
         document.body.classList.remove("dark-mode");
 
-        // Save the Light Mode preference.
-        localStorage.setItem("darkMode", "disabled");
-
+        // Save the preference.
+        localStorage.setItem(
+            "darkMode",
+            "disabled"
+        );
     }
 
 });
@@ -255,14 +275,14 @@ let submitButton =
     document.getElementById("submit-button");
 
 
-// Add a click event listener to the Submit button.
+// Add a click event listener.
 submitButton.addEventListener("click", function (event) {
 
-    // Prevent the form from refreshing the page.
+    // Prevent the page from refreshing.
     event.preventDefault();
 
 
-    // Get the name entered in the contact form.
+    // Get the name entered by the visitor.
     let contactName =
         document.getElementById("name").value;
 
