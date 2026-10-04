@@ -1,297 +1,397 @@
-// --------------------------------------------------
-// WELCOME MODAL
-// --------------------------------------------------
+/* General Page Styling */
 
-// Locate the welcome modal and Close button.
-let welcomeModal = document.getElementById("welcome-modal");
-let closeModal = document.getElementById("close-modal");
-
-// Close the modal when the user clicks the Close button.
-closeModal.addEventListener("click", function () {
-    welcomeModal.style.display = "none";
-});
-
-
-// --------------------------------------------------
-// PROJECT OBJECTS
-// --------------------------------------------------
-
-// Create the first project object.
-let project1 = {
-    title: "Personal Blog Website",
-    summary: "A personal blog website created using HTML and CSS. The project demonstrates webpage structure, navigation, responsive design, and contact forms.",
-    imageURL: "https://via.placeholder.com/400x250?text=Personal+Blog",
-    repositoryURL: "https://aseldon149.github.io/aseldon149/#home"
-};
-
-
-// Create the second project object.
-let project2 = {
-    title: "The Storefront",
-    summary: "A storefront website project demonstrating web design, page structure, styling, and user-friendly website navigation.",
-    imageURL: "https://via.placeholder.com/400x250?text=The+Storefront",
-    repositoryURL: "https://aseldon149.github.io/the-storefront/"
-};
-
-
-// Create the third project object.
-let project3 = {
-    title: "Future Project",
-    summary: "This is a placeholder for a future project that will be added as I continue developing my skills.",
-    imageURL: "https://via.placeholder.com/400x250?text=Future+Project",
-    repositoryURL: "https://github.com/aseldon149"
-};
-
-
-// Place the project objects into an array.
-let projects = [
-    project1,
-    project2,
-    project3
-];
-
-
-// --------------------------------------------------
-// SESSION STORAGE
-// --------------------------------------------------
-
-// Check whether project information already exists
-// in sessionStorage.
-let storedProjects = sessionStorage.getItem("projects");
-
-
-// If project information does not exist,
-// convert the array to JSON and store it.
-if (storedProjects === null) {
-
-    sessionStorage.setItem(
-        "projects",
-        JSON.stringify(projects)
-    );
-
-} else {
-
-    // Retrieve the stored project information
-    // and convert it back into JavaScript objects.
-    projects = JSON.parse(storedProjects);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #dbeafe, #f0f9ff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-width: 320px;
 }
 
 
-// --------------------------------------------------
-// DYNAMIC PROJECT DISPLAY
-// --------------------------------------------------
+/* Header Section */
 
-// Locate the Projects container.
-let projectsContainer =
-    document.getElementById("projects-container");
+header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
 
-
-// Loop through every project in the array.
-for (let i = 0; i < projects.length; i++) {
-
-    // Create a project article.
-    let projectCard =
-        document.createElement("article");
-
-    projectCard.classList.add("project-card");
-
-
-    // Create the project link.
-    let projectLink =
-        document.createElement("a");
-
-    projectLink.href =
-        projects[i].repositoryURL;
-
-    projectLink.target = "_blank";
-
-
-    // Create the project image.
-    let projectImage =
-        document.createElement("img");
-
-    projectImage.src =
-        projects[i].imageURL;
-
-    projectImage.alt =
-        projects[i].title + " project";
-
-
-    // Add the image to the link.
-    projectLink.appendChild(projectImage);
-
-
-    // Create the project title.
-    let projectTitle =
-        document.createElement("h3");
-
-    projectTitle.textContent =
-        projects[i].title;
-
-
-    // Create the project summary.
-    let projectSummary =
-        document.createElement("p");
-
-    projectSummary.textContent =
-        projects[i].summary;
-
-
-    // Add the elements to the project card.
-    projectCard.appendChild(projectLink);
-
-    projectCard.appendChild(projectTitle);
-
-    projectCard.appendChild(projectSummary);
-
-
-    // Add the project card to the Projects section.
-    projectsContainer.appendChild(projectCard);
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 
-// --------------------------------------------------
-// CONDITIONAL LOGIC
-// --------------------------------------------------
+/* Dark Mode Toggle */
 
-// Count the dynamically created project cards.
-let projectCount =
-    document.querySelectorAll(".project-card").length;
+.dark-mode-toggle {
+    display: inline-block;
+    margin: 15px;
+    font-weight: bold;
+}
 
-
-// Locate the Featured Content sections.
-let universityResources =
-    document.getElementById("university-resources");
-
-let personalProjects =
-    document.getElementById("personal-projects");
-
-
-// Display Featured Content based on project count.
-if (projectCount < 3) {
-
-    universityResources.style.display = "block";
-
-    personalProjects.style.display = "block";
-
-} else {
-
-    universityResources.style.display = "none";
-
-    personalProjects.style.display = "block";
+.dark-mode-toggle input {
+    margin-right: 8px;
 }
 
 
-// --------------------------------------------------
-// SKILLS LOOP
-// --------------------------------------------------
+/* Navigation Menu */
 
-// Create an array containing skills and technologies.
-let skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Git",
-    "GitHub"
-];
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin-top: 20px;
+}
 
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #2563eb;
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-// Locate the skills list.
-let skillsList =
-    document.getElementById("skills-list");
-
-
-// Use a for loop to display each skill.
-for (let i = 0; i < skills.length; i++) {
-
-    let listItem =
-        document.createElement("li");
-
-    listItem.textContent =
-        skills[i];
-
-    skillsList.appendChild(listItem);
+nav ul li a:hover {
+    background-color: #60a5fa;
+    color: black;
 }
 
 
-// --------------------------------------------------
-// DARK MODE WITH LOCAL STORAGE
-// --------------------------------------------------
+/* Main Content */
 
-// Locate the Dark Mode checkbox.
-let darkMode =
-    document.getElementById("darkMode");
-
-
-// Check for a saved Dark Mode preference.
-let savedDarkMode =
-    localStorage.getItem("darkMode");
-
-
-// Apply Dark Mode if it was previously enabled.
-if (savedDarkMode === "enabled") {
-
-    document.body.classList.add("dark-mode");
-
-    darkMode.checked = true;
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
 }
 
 
-// Listen for changes to the Dark Mode checkbox.
-darkMode.addEventListener("change", function () {
+/* Content Sections */
 
-    if (darkMode.checked) {
+section {
+    background-color: white;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        // Turn on Dark Mode.
-        document.body.classList.add("dark-mode");
+section h2 {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 0;
+}
 
-        // Save the preference.
-        localStorage.setItem(
-            "darkMode",
-            "enabled"
-        );
+section p {
+    line-height: 1.6;
+}
 
-    } else {
 
-        // Turn off Dark Mode.
-        document.body.classList.remove("dark-mode");
+/* Skills List */
 
-        // Save the preference.
-        localStorage.setItem(
-            "darkMode",
-            "disabled"
-        );
+#skills-list {
+    line-height: 1.8;
+}
+
+
+/* Featured Content */
+
+.featured-box {
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 2px solid #2563eb;
+    background-color: #eff6ff;
+}
+
+.featured-box h3 {
+    color: #1e3a8a;
+}
+
+.featured-box a {
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.featured-box img {
+    width: 300px;
+    max-width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.featured-box img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Projects Section */
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Individual Project Cards */
+
+.project-card {
+    flex: 1 1 250px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Project Images */
+
+.project-card img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+
+/* Project Image Hover Effect */
+
+.project-card img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Contact Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Form Fields */
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Focus Effects */
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+
+/* Submit Button */
+
+input[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #60a5fa;
+}
+
+
+/* Tooltip */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+/* Show Tooltip When Hovering */
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Welcome Modal */
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Modal Close Button */
+
+#close-modal {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-modal:hover {
+    background-color: #60a5fa;
+}
+
+
+/* Dark Mode */
+
+body.dark-mode {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode section {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-mode section h2 {
+    background-color: #111827;
+}
+
+body.dark-mode .project-card {
+    background-color: #374151;
+    color: #f9fafb;
+}
+
+body.dark-mode .featured-box {
+    background-color: #374151;
+    border-color: #60a5fa;
+    color: #f9fafb;
+}
+
+body.dark-mode .featured-box h3 {
+    color: #93c5fd;
+}
+
+body.dark-mode .featured-box a {
+    color: #93c5fd;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1f2937;
+    color: white;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+/* Phone Layout */
+
+@media screen and (max-width: 767px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
-});
+    .projects-container {
+        flex-direction: column;
+    }
+
+    .featured-box img {
+        width: 90%;
+    }
+
+}
 
 
-// --------------------------------------------------
-// CONTACT FORM INTERACTIVITY
-// --------------------------------------------------
+/* Tablet Layout */
 
-// Locate the Submit button.
-let submitButton =
-    document.getElementById("submit-button");
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
+    .projects-container {
+        flex-direction: row;
+    }
 
-// Add a click event listener.
-submitButton.addEventListener("click", function (event) {
-
-    // Prevent the page from refreshing.
-    event.preventDefault();
+}
 
 
-    // Get the name entered by the visitor.
-    let contactName =
-        document.getElementById("name").value;
+/* Desktop Layout */
 
+@media screen and (min-width: 1024px) {
 
-    // Display a confirmation message.
-    alert(
-        "Thank you, " +
-        contactName +
-        ", your message has been sent!"
-    );
+    .projects-container {
+        flex-direction: row;
+    }
 
-});
+}
